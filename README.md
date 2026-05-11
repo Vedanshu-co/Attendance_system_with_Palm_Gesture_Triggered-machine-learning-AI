@@ -1,0 +1,2 @@
+# Attendance_system_with_Palm_Gesture_Triggered-machine-learning-AI
+The system uses a palm gesture as a trigger to capture the user’s face. The captured face is processed using OpenCV and recognized using an LBPH model. If the face matches a known user, attendance is recorded in a CSV file and uploaded to Firebase. The system uses LEDs to indicate different stages such as detection, processing, and completion
