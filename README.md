@@ -1,5 +1,72 @@
 # Attendance_system_with_Palm_Gesture_Triggered-machine-learning-AI
 The system uses a palm gesture as a trigger to capture the user’s face. The captured face is processed using OpenCV and recognized using an LBPH model. If the face matches a known user, attendance is recorded in a CSV file and uploaded to Firebase. The system uses LEDs to indicate different stages such as detection, processing, and completion
+
+
+🚀 How to Use
+
+Follow these steps to set up and run the project:
+
+1. Clone the Repository
+
+git clone https://github.com/Vedanshu-co/Student_attendance_modifiocation01.git
+cd Student_attendance_modifiocation01
+
+2. Create and Activate a Virtual Environment
+
+python3 -m venv vision_env
+source vision_env/bin/activate
+
+3. Install the Required Dependencies
+
+pip install -r requirements.txt
+
+4. Configure the Hardware
+
+* Connect the Raspberry Pi Camera or IR Camera.
+* Connect the Red, Yellow, and Green LEDs to the configured GPIO pins.
+* Ensure the camera is enabled in Raspberry Pi OS.
+* Place the trained face recognition model (face_model.yml) and labels.txt in the models/ directory.
+
+5. Configure Firebase (Optional)
+
+* Create a Firebase project.
+* Download the Firebase Admin SDK service account key.
+* Place the JSON key file in the project directory.
+* Update the Firebase configuration in upload_to_firebase.py.
+
+6. Run the Application
+
+Start the complete attendance system:
+
+python run.py
+
+Or, if using MJPEG streaming with rpicam-vid:
+
+rpicam-vid -t 0 --codec mjpeg --width 1280 --height 720 --framerate 25 --nopreview -o - | python3 palm_face_capture.py
+
+7. System Workflow
+
+1. Show your palm to the camera to trigger the system.
+2. Wait for the countdown to finish.
+3. Face detection and recognition will run automatically.
+4. Attendance will be recorded in a CSV file.
+5. Attendance data will be uploaded to Firebase Firestore (if configured).
+6. The LEDs indicate the current status of the process.
+
+8. Output
+
+* Attendance records are saved in the attendance/ folder.
+* Captured face images are stored in the faces/ folder.
+* Attendance data is uploaded to Firebase Firestore after successful recognition.
+
+Notes
+
+* Use good lighting for better face detection accuracy.
+* Ensure the trained model and label files are available before running the application.
+* Verify all required Python packages are installed from requirements.txt.
+* Confirm that the Raspberry Pi camera and GPIO connections are functioning correctly before starting the system.
+
+
 # problem faced
 IoT-based Face Detection and Attendance System using Raspberry Pi 3B+, IR Camera, MediaPipe, OpenCV, and Firebase.
 
