@@ -6,6 +6,7 @@ Here's an accurate "How to Apply / Run" section based on what's actually in the 
 ## 🚀 How to Apply / Run This Project
 
 ### 1. Clone the Repository
+To use clone the repo ⬇️
 ```bash
 git clone https://github.com/Vedanshu-co/Attendance_system_with_Palm_Gesture_Triggered-machine-learning-AI.git
 cd Attendance_system_with_Palm_Gesture_Triggered-machine-learning-AI
